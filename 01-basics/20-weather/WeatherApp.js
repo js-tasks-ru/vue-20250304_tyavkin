@@ -9,7 +9,7 @@ export default defineComponent({
 
     return {
       weatherData,
-      WeatherConditionIcons,
+      weatherConditionIcons: WeatherConditionIcons,
     }
   },
 
@@ -33,7 +33,7 @@ export default defineComponent({
             </div>
           </div>
           <div class="weather-conditions">
-            <div class="weather-conditions__icon" :title="item.current.weather.description">{{ WeatherConditionIcons[item.current.weather.id] }}</div>
+            <div class="weather-conditions__icon" :title="item.current.weather.description">{{ weatherConditionIcons[item.current.weather.id] }}</div>
             <div class="weather-conditions__temp">{{ (item.current.temp - 273.15).toFixed(1) }} °C</div>
           </div>
           <div class="weather-details">
