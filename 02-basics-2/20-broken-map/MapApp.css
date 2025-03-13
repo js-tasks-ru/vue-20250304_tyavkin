@@ -1,0 +1,17 @@
+.map {
+  display: flex;
+  width: fit-content;
+  background-color: #cfc;
+  position: relative;
+}
+
+.pin {
+  font-size: 24px;
+  line-height: 1em;
+  pointer-events: none;
+  user-select: none;
+  position: absolute;
+  transition: left ease 0.2s, top ease 0.2s;
+  /* Make position relative to pin end */
+  transform: translate(-50%, -100%);
+}
