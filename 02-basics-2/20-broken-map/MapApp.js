@@ -5,35 +5,31 @@ export default defineComponent({
 
   setup() {
     // Реактивные переменные для хранения координат метки
-    let x = ref(0)
-    let y = ref(0)
+    let mousePosX = ref(0)
+    let mousePosY = ref(0)
 
     /**
      * Обработчик клика по карте для установки координат метки
      * @param {MouseEvent} event
      */
     function handleClick(event) {
-      x = event.offsetX
-      y = event.offsetY
+      mousePosX.value = event.offsetX
+      mousePosY.value = event.offsetY
     }
-
-    // Следим за X и Y для установки нового положения
-    watch([x, y], () => {
-      // Находим метку и изменяем её положение
-      const map = document.querySelector('.pin')
-      map.style.left = `${x}px`
-      map.style.top = `${y}px`
-    })
 
     return {
       handleClick,
+      mousePosX,
+      mousePosY,
     }
   },
 
   template: `
     <div class="map" @click="handleClick">
-      <img class="map-image" src="./map.png" alt="Map" draggable="false" />
-      <span class="pin">📍</span>
+      <img class="map-image" src="./map.png" alt="Map" draggable="false"/>
+      <span class="pin"
+      :style="{left: mousePosX + 'px'}"
+      :style="{top: mousePosY + 'px'}">📍</span>
     </div>
   `,
 })
