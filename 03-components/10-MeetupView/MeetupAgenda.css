@@ -1,0 +1,8 @@
+/* _agenda.css */
+.agenda__item {
+  border-block-start: var(--border-width-small) solid var(--grey-3);
+}
+
+.agenda__item:first-child {
+  border-block-start: none;
+}
