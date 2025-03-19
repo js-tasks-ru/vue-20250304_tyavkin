@@ -1,0 +1,22 @@
+@font-face {
+  font-family: emoji;
+  src: local('Apple Color Emoji'), local('Android Emoji'), local('Segoe UI Emoji'), local(EmojiSymbols),
+  local(Symbola);
+}
+
+.calculator {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.calculator__operators {
+  display: flex;
+  flex-direction: column;
+  font-family: emoji;
+}
+
+input[type='number'] {
+  width: 48px;
+}
