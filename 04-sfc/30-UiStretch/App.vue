@@ -10,15 +10,18 @@ import UiStretch from './UiStretch.vue'
       </UiStretch>
 
       <UiStretch class="sample">
-        <img src="https://picsum.photos/400/300" alt="" />
+        <img
+          src="https://sun9-20.userapi.com/impg/5J6XWFfYyaiivevjewGYwkuZ6mIuWVIeSCJYQA/XLfa0ZAKBDE.jpg?size=604x340&quality=95&sign=d123ee835289677c71cef0062c6c55b5&type=album"
+          alt=""
+        />
       </UiStretch>
 
       <UiStretch class="sample">
-        <img src="https://picsum.photos/200/200" alt="" />
+        <img src="https://masterpiecer-images.s3.yandex.net/625adec7907211ee843d56181a0358a2:upscaled" alt="" />
       </UiStretch>
 
       <UiStretch class="sample">
-        <img src="https://picsum.photos/300/400" alt="" />
+        <img src="https://i.pinimg.com/736x/d3/c0/4e/d3c04ec9566cb5caa4bc92a61e07163f.jpg" alt="" />
       </UiStretch>
 
       <UiStretch class="sample">
