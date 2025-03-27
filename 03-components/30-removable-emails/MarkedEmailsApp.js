@@ -53,14 +53,17 @@ export default defineComponent({
       }))
     })
 
-    function removeEmailByIndex(index) {
-      emails.value.splice(index, 1)
+    function removeEmailByName(value) {
+      let index = emails.value.indexOf(value)
+      if (index !== -1) {
+        emails.value.splice(index, 1)
+      }
     }
 
     return {
       query,
       markedEmails,
-      removeEmailByIndex,
+      removeEmailByName,
     }
   },
 
@@ -76,7 +79,7 @@ export default defineComponent({
       </UiFormGroup>
       <EmailList 
         :emails="markedEmails"        
-        @removeEmailById="removeEmailByIndex" />
+        @remove-email-by-name="removeEmailByName" />
     </div>
   `,
 })

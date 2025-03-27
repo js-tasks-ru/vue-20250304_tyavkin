@@ -13,7 +13,7 @@ export default defineComponent({
   template: `
     <div class="weather-alert">
         <span class="weather-alert__icon">⚠️</span>
-        <span class="weather-alert__description">{{ $props.description }}</span>
+        <span class="weather-alert__description">{{ description }}</span>
     </div>
   `,
 })

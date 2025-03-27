@@ -11,7 +11,7 @@ const props = defineProps({
   },
 })
 
-const bgStyle = computed(() => (props.image ? `url('${props.image}')` : undefined))
+const bgStyle = computed(() => (props.image ? `url('${props.image}')` : `var(--default-cover)`))
 </script>
 
 <template>
@@ -24,8 +24,7 @@ const bgStyle = computed(() => (props.image ? `url('${props.image}')` : undefine
 .meetup-cover {
   background-size: cover;
   background-position: center;
-  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    v-bind('bgStyle ? bgStyle : `var(--default-cover)`');
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), v-bind(bgStyle);
   display: flex;
   flex-direction: column;
   align-items: center;

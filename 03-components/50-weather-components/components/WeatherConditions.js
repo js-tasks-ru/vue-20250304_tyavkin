@@ -1,4 +1,4 @@
-import { defineComponent } from 'vue'
+import { defineComponent, computed } from 'vue'
 import { WeatherConditionIcons } from '../weather.service.ts'
 
 export default defineComponent({
@@ -22,7 +22,7 @@ export default defineComponent({
   },
 
   setup(props) {
-    const temperatureInDegrees = (props.temperature - 273.15).toFixed(1)
+    const temperatureInDegrees = computed(() => (props.temperature - 273.15).toFixed(1))
 
     return {
       temperatureInDegrees,

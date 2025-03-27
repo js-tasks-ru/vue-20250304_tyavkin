@@ -10,16 +10,12 @@ export default defineComponent({
 
     const time = ref(getTimeString(new Date()))
 
-    setTimeout(() => {
-      time.value = new Date()
-    }, 1000)
-
-    const intervalId = setInterval(function () {
+    const timer = setInterval(function () {
       time.value = getTimeString(new Date())
     }, 1000)
 
     onBeforeUnmount(() => {
-      clearInterval(intervalId)
+      clearTimeout(timer)
     })
 
     return {

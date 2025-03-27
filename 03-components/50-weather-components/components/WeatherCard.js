@@ -20,9 +20,9 @@ export default defineComponent({
   },
 
   setup(props) {
-    const alertDescription = props.weather.alert
-      ? props.weather.alert.sender_name + ': ' + props.weather.alert.description
-      : ''
+    const alertDescription = computed(() =>
+      props.weather.alert ? props.weather.alert.sender_name + ': ' + props.weather.alert.description : '',
+    )
 
     const isWeatherCardNight = computed(
       () =>

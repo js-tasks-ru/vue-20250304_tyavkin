@@ -17,8 +17,8 @@ export default defineComponent({
 
   template: `
     <div class="weather-details__item">
-      <div class="weather-details__item-label">{{ $props.label }}</div>
-      <div class="weather-details__item-value">{{ $props.value }}</div>
+      <div class="weather-details__item-label">{{ label }}</div>
+      <div class="weather-details__item-value">{{ value }}</div>
     </div>
   `,
 })
