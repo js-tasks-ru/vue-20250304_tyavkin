@@ -1,0 +1,5 @@
+/* _meetup-description.css */
+.meetup-description {
+  margin: var(--spacing-large) 0;
+  white-space: pre-wrap;
+}
