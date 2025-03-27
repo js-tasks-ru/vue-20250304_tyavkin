@@ -1,5 +1,5 @@
-<script>
-import { computed, defineComponent } from 'vue'
+<script setup>
+import { computed, defineProps } from 'vue'
 import { UiIcon } from '@shgk/vue-course-ui'
 
 const agendaItemDefaultTitles = {
@@ -24,29 +24,15 @@ const agendaItemIcons = {
   other: 'cal-sm',
 }
 
-export default defineComponent({
-  name: 'MeetupAgendaItem',
-
-  components: {
-    UiIcon,
-  },
-
-  props: {
-    agendaItem: {
-      type: Object,
-      required: true,
-    },
-  },
-
-  setup(props) {
-    const icon = computed(() => agendaItemIcons[props.agendaItem.type])
-    const title = computed(() => agendaItemDefaultTitles[props.agendaItem.type])
-    return {
-      icon,
-      title,
-    }
+const props = defineProps({
+  agendaItem: {
+    type: Object,
+    required: true,
   },
 })
+
+const icon = computed(() => agendaItemIcons[props.agendaItem.type])
+const title = computed(() => agendaItemDefaultTitles[props.agendaItem.type])
 </script>
 
 <template>
@@ -54,15 +40,15 @@ export default defineComponent({
     <div class="agenda-item__col">
       <UiIcon :icon="icon" />
     </div>
-    <div class="agenda-item__col">{{ agendaItem.startsAt }} - {{ agendaItem.endsAt }}</div>
+    <div class="agenda-item__col">{{ props.agendaItem.startsAt }} - {{ props.agendaItem.endsAt }}</div>
     <div class="agenda-item__col">
       <div class="agenda-item__title">{{ title }}</div>
       <div v-if="agendaItem.speaker" class="agenda-item__talk">
         <span>{{ agendaItem.speaker }}</span>
         <span class="agenda-item__dot"></span>
-        <span class="agenda-item__lang">{{ agendaItem.language }}</span>
+        <span class="agenda-item__lang">{{ props.agendaItem.language }}</span>
       </div>
-      <div v-if="agendaItem.description">{{ agendaItem.description }}</div>
+      <div v-if="agendaItem.description">{{ props.agendaItem.description }}</div>
     </div>
   </div>
 </template>

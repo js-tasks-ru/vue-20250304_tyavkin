@@ -53,23 +53,33 @@ export default defineComponent({
       }))
     })
 
-    function removeEmailByIndex(index) {
-      emails.value.splice(index, 1)
+    function removeEmailByName(value) {
+      let index = emails.value.indexOf(value)
+      if (index !== -1) {
+        emails.value.splice(index, 1)
+      }
     }
 
     return {
       query,
       markedEmails,
-      removeEmailByIndex,
+      removeEmailByName,
     }
   },
 
   template: `
     <div>
       <UiFormGroup>
-        <UiInput v-model.trim="query" type="search" placeholder="Поиск" aria-label="Поиск" small />
+        <UiInput 
+          v-model.trim="query" 
+          type="search" 
+          placeholder="Поиск" 
+          aria-label="Поиск" 
+          small />
       </UiFormGroup>
-      <EmailList :emails="markedEmails" />
+      <EmailList 
+        :emails="markedEmails"        
+        @remove-email-by-name="removeEmailByName" />
     </div>
   `,
 })
