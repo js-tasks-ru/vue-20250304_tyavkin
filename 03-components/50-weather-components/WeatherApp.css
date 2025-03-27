@@ -1,0 +1,64 @@
+.weather-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 570px;
+}
+
+.weather-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  box-shadow: 0 2px 16px #0000001f;
+  background-color: var(--white);
+}
+
+.weather-card__name {
+  margin: 0;
+}
+
+.weather-card--night {
+  background-color: #dee1e1;
+}
+
+.weather-card__header {
+  position: relative;
+}
+
+.weather-card__time {
+  color: var(--grey-8);
+}
+
+.weather-conditions {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  font-size: 48px;
+  font-weight: lighter;
+}
+
+.weather-details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.weather-details__item {
+  display: flex;
+  flex-direction: column;
+}
+
+.weather-details__item-label {
+  color: var(--grey-8);
+}
+
+.weather-alert {
+  background-color: #fff2cc;
+  padding: 10px;
+}
+
+.weather-alert__icon {
+  margin-right: 10px;
+}
