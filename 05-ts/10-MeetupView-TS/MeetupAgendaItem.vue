@@ -16,11 +16,8 @@ const agendaItemDefaultTitles = {
   afterparty: 'Afterparty',
   talk: 'Доклад',
   other: 'Другое',
-}
+} as const
 
-// ⚠️ Чтобы TS понимал, что этот объект - константа, и других значений здесь не будет - потребуется добавить `as const`
-// В противном случае TS не позволит передать значения этих полей в `icon` с ошибкой
-// Type 'string' is not assignable to type 'Icons'.
 const agendaItemIcons = {
   registration: 'key',
   opening: 'cal-sm',
@@ -30,7 +27,7 @@ const agendaItemIcons = {
   closing: 'key',
   afterparty: 'cal-sm',
   other: 'cal-sm',
-} // as const
+} as const
 
 const icon = computed(() => agendaItemIcons[props.agendaItem.type])
 const title = computed(() => agendaItemDefaultTitles[props.agendaItem.type])
@@ -43,13 +40,13 @@ const title = computed(() => agendaItemDefaultTitles[props.agendaItem.type])
     </div>
     <div class="agenda-item__col">{{ agendaItem.startsAt }} - {{ agendaItem.endsAt }}</div>
     <div class="agenda-item__col">
-      <div class="agenda-item__title">{{ title }}</div>
-      <div v-if="agendaItem.speaker" class="agenda-item__talk">
+      <h3 class="agenda-item__title">{{ title }}</h3>
+      <p v-if="agendaItem.speaker" class="agenda-item__talk">
         <span>{{ agendaItem.speaker }}</span>
         <span class="agenda-item__dot"></span>
         <span class="agenda-item__lang">{{ agendaItem.language }}</span>
-      </div>
-      <div v-if="agendaItem.description">{{ agendaItem.description }}</div>
+      </p>
+      <p v-if="agendaItem.description">{{ agendaItem.description }}</p>
     </div>
   </div>
 </template>
