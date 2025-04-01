@@ -10,7 +10,7 @@ const props = defineProps<{
   invalid?: boolean
 }>()
 
-const slots = defineSlots<{
+defineSlots<{
   default?: Slot
   label?: Slot
   description?: Slot
