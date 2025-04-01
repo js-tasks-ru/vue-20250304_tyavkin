@@ -28,10 +28,7 @@ const showHintOrError = computed(
         <slot name="label">{{ label }}</slot>
       </label>
       <div class="form-group__description">
-        <slot v-if="slots.description !== undefined" name="description" />
-        <template v-else>
-          {{ description }}
-        </template>
+        <slot name="description">{{ description }}</slot>
       </div>
     </div>
     <div class="form-group__control">
