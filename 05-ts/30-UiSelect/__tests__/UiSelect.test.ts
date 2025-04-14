@@ -1,10 +1,10 @@
-import fs from 'node:fs/promises'
+import fs from 'fs/promises'
 import { describe, expect, it } from 'vitest'
 import { shallowMount } from '@vue/test-utils'
-import UiSelect from '@/UiSelect.vue'
+import UiSelect from '../UiSelect.vue'
 
 async function readComponentSource(component: object) {
-  if (!('__file' in component) || !component.__file) {
+  if (!('__file' in component) || typeof component.__file !== 'string') {
     throw new Error(`Компонент должен быть описан на <script setup>`)
   }
 

@@ -2,7 +2,7 @@ import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
 import { mount } from '@vue/test-utils'
 import { nextTick } from 'vue'
 import type { VueWrapper } from '@vue/test-utils'
-import UiClock from '@/UiClock.js'
+import UiClock from '../UiClock.js'
 
 describe('components/UiClock', () => {
   let wrapper: VueWrapper

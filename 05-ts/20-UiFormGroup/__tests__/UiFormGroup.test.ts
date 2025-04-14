@@ -1,9 +1,9 @@
-import fs from 'node:fs/promises'
+import fs from 'fs/promises'
 import type { Component } from 'vue'
 import { assert, describe, expect, it } from 'vitest'
 import { shallowMount } from '@vue/test-utils'
 import { ESLint } from 'eslint'
-import UiFormGroup from '@/UiFormGroup.vue'
+import UiFormGroup from '../UiFormGroup.vue'
 
 async function readComponentSource(component: Component) {
   if (!('__file' in component) || !component.__file) {

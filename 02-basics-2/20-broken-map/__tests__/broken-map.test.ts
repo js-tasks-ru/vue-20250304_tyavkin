@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import { mount } from '@vue/test-utils'
-import MapApp from '@/MapApp.js'
+import MapApp from '../MapApp.js'
 import { nextTick } from 'vue'
 
 describe('MapApp', () => {

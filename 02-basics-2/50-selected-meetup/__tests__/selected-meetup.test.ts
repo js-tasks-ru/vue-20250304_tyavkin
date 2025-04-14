@@ -2,11 +2,11 @@ import { describe, it, expect, beforeEach, vi } from 'vitest'
 import type { MockedFunction } from 'vitest'
 import { createWrapperError, flushPromises, mount } from '@vue/test-utils'
 import type { VueWrapper, DOMWrapper } from '@vue/test-utils'
-import SelectedMeetupApp from '@/SelectedMeetupApp.js'
-import { getMeetup } from '@/meetupsService.ts'
-import type { MeetupDTO } from '@/meetups.types.ts'
+import SelectedMeetupApp from '../SelectedMeetupApp.js'
+import { getMeetup } from '../meetupsService.ts'
+import type { MeetupDTO } from '../meetups.types.ts'
 
-vi.mock('@/meetupsService.ts')
+vi.mock('../meetupsService.ts')
 
 const mockMeetups = {
   1: { id: 1, title: 'Meetup 1' },
@@ -35,7 +35,7 @@ describe('SelectedMeetupApp', () => {
     wrapper = mount(SelectedMeetupApp)
     prevButton = findByText(wrapper, 'button', 'Предыдущий')
     nextButton = findByText(wrapper, 'button', 'Следующий')
-    meetupIdRadioLabels = wrapper.findAll('[role="radiogroup"] label')
+    meetupIdRadioLabels = wrapper.findAll('label')
     meetupIdRadioButtons = meetupIdRadioLabels.map(label => wrapper.find(`input#${label.attributes('for')}`))
   })
 

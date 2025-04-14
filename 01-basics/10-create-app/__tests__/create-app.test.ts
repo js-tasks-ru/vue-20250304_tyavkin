@@ -6,7 +6,7 @@ describe('create-app', () => {
     const appElement = document.createElement('div')
     appElement.id = 'app'
     document.body.appendChild(appElement)
-    await import('@/script.js')
+    await import('../script.js')
   })
 
   it('монтирует Vue приложение в элемент #app', () => {

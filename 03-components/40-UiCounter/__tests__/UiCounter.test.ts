@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import { mount, VueWrapper } from '@vue/test-utils'
-import UiCounter from '@/UiCounter.js'
+import UiCounter from '../UiCounter.js'
 
 function mountUiCounter({ count, min, max }: { count: number; min?: number; max?: number }) {
   const wrapper = mount(UiCounter, { props: { count, min, max } })
@@ -23,6 +23,7 @@ describe('components/UiCounter', () => {
 
   it('отображает новое значение счётчика при обновлении параметра `count`', async () => {
     const { wrapper, getCount } = mountUiCounter({ count: 3 })
+    // @ts-expect-error props are not defined on development
     await wrapper.setProps({ count: 5 })
     expect(getCount()).toBe('5')
   })
