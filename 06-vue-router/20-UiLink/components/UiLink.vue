@@ -1,15 +1,17 @@
 <script setup>
-  import { defineProps, computed } from 'vue';
+  import { computed } from 'vue';
 
   const props = defineProps({
-    to: String || Object,
+    to: [String, Object],
     href: String});
 
-const isRouterLink = computed(()=> props.href === undefined ? 'RouterLink': 'a')
+const isRouterLink = computed(() => props.href ? 'a' : 'RouterLink' )
+
+const linkProps = computed(() => props.href ? { href: props.href } : { to: props.to })
 </script>
-\
+
 <template>
-  <component :is="isRouterLink" v-bind="props"><slot /></component>
+  <component :is="isRouterLink" v-bind="linkProps"><slot /></component>
 </template>
 
 <style scoped>
